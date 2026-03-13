@@ -39,12 +39,41 @@ padding:20px;
 
 /* CONTENEDOR */
 
+/* CONTENEDOR CENTRADO PARA TODOS LOS DISPOSITIVOS */
+
 .contenedor{
 
-width:100%;
-max-width:500px;
+width:90%;
+
+max-width:420px;
+
+margin:auto;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
 
 }
+
+
+/* TARJETA PRINCIPAL */
+
+.card{
+
+width:100%;
+
+max-width:420px;
+
+margin:auto;
+
+padding:clamp(20px,4vw,30px);
+
+border-radius:18px;
+
+}
+
 
 
 /* TARJETA */
@@ -246,5 +275,301 @@ color:white;
 letter-spacing:2px;
 
 opacity:0.8;
+
+}
+/* EVITA QUE TODO SE SALGA DE LA PANTALLA */
+
+html,body{
+width:100%;
+overflow-x:hidden;
+}
+
+
+/* CONTENEDOR RESPONSIVO */
+
+.contenedor{
+width:100%;
+max-width:500px;
+margin:auto;
+padding:10px;
+}
+
+
+/* TARJETA */
+
+.card{
+width:100%;
+max-width:100%;
+}
+
+
+/* INPUT Y BOTONES */
+
+input,select,button{
+width:100%;
+max-width:100%;
+}
+
+
+/* LISTA */
+
+ul{
+width:100%;
+padding:0;
+}
+
+
+/* RESPONSIVE CELULAR */
+
+@media (max-width:600px){
+
+body{
+padding:10px;
+}
+
+.card{
+padding:18px;
+border-radius:15px;
+}
+
+h1{
+font-size:26px;
+}
+
+}
+/* LIMITAR ANCHO DE ELEMENTOS */
+
+input,
+select,
+button,
+ul{
+
+max-width:100%;
+
+}
+/* BOTON LIDER DISCRETO */
+
+#botonLider{
+
+position:fixed;
+
+top:10px;
+right:10px;
+
+background:#ffffff90;
+
+border:none;
+
+padding:6px 10px;
+
+border-radius:8px;
+
+font-size:12px;
+
+cursor:pointer;
+
+}
+
+
+/* PANEL LIDER */
+
+#panelLider{
+
+display:none;
+
+position:fixed;
+
+top:50%;
+
+left:50%;
+
+transform:translate(-50%,-50%);
+
+background:white;
+
+padding:25px;
+
+border-radius:15px;
+
+box-shadow:0 10px 30px rgba(0,0,0,0.2);
+
+width:90%;
+max-width:350px;
+
+text-align:center;
+
+}
+.tableroRoles{
+
+display:flex;
+flex-wrap:wrap;
+gap:15px;
+justify-content:center;
+
+}
+
+.columnaRol{
+
+background:#f3f7ff;
+border-radius:12px;
+padding:15px;
+width:200px;
+min-height:120px;
+
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
+
+}
+
+.columnaRol h4{
+
+margin:0;
+font-size:16px;
+
+}
+
+.versiculo{
+
+font-size:12px;
+color:#666;
+
+}
+
+.servidor{
+
+background:white;
+padding:6px;
+margin-top:6px;
+border-radius:6px;
+cursor:grab;
+
+box-shadow:0 2px 6px rgba(0,0,0,0.15);
+
+}
+
+*{
+box-sizing:border-box;
+}
+
+body{
+
+margin:0;
+padding:0;
+
+font-family:'Segoe UI',sans-serif;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+min-height:100vh;
+
+background:url("https://i.pinimg.com/736x/05/22/96/052296fcd2f1137afad58226d45c63ed.jpg");
+background-size:cover;
+background-position:center;
+
+}
+.container{
+
+width:90%;
+max-width:500px;
+
+margin:auto;
+
+background:rgba(255,255,255,0.92);
+
+padding:25px;
+
+border-radius:18px;
+
+text-align:center;
+
+box-shadow:0 10px 30px rgba(0,0,0,0.25);
+
+}
+.container{
+
+width:90%;
+max-width:500px;
+
+margin:auto;
+
+background:rgba(255,255,255,0.92);
+
+padding:25px;
+
+border-radius:18px;
+
+text-align:center;
+
+box-shadow:0 10px 30px rgba(0,0,0,0.25);
+
+}
+.card{
+
+background:#f7f4ff;
+
+padding:18px;
+
+border-radius:12px;
+
+margin-top:15px;
+
+}
+button{
+
+width:100%;
+
+padding:14px;
+
+margin-top:10px;
+
+border:none;
+
+border-radius:10px;
+
+font-size:16px;
+
+cursor:pointer;
+
+}
+.columnaRol{
+
+background:#f2f6ff;
+
+border-radius:12px;
+
+padding:12px;
+
+min-height:120px;
+
+box-shadow:0 4px 12px rgba(0,0,0,0.1);
+
+}
+.columnaRol{
+
+background:#f2f6ff;
+
+border-radius:12px;
+
+padding:12px;
+
+min-height:120px;
+
+box-shadow:0 4px 12px rgba(0,0,0,0.1);
+
+}
+.servidor{
+
+background:white;
+
+padding:6px;
+
+margin-top:6px;
+
+border-radius:8px;
+
+font-size:14px;
+
+cursor:grab;
 
 }

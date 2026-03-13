@@ -200,3 +200,172 @@ document.getElementById("noAsisten").innerText = "No asisten: "+noAsisten;
 document.getElementById("pendientes").innerText = "Pendientes: "+pendientes;
 
 }
+function abrirPanelLider(){
+
+let codigo = prompt("Código del líder");
+
+if(codigo === "7777"){
+
+document.getElementById("panelLider").style.display="block";
+
+actualizarPanel();
+
+}else{
+
+alert("Código incorrecto");
+
+}
+
+}
+function actualizarPanel(){
+
+db.ref("confirmaciones").once("value",(snapshot)=>{
+
+let asisten = 0;
+let noAsisten = 0;
+
+snapshot.forEach((child)=>{
+
+let estado = child.val().estado;
+
+if(estado === "asisto"){
+
+asisten++;
+
+}else{
+
+noAsisten++;
+
+}
+
+});
+
+document.getElementById("totalAsisten").innerText = "Asisten: "+asisten;
+
+document.getElementById("totalNoAsisten").innerText = "No asisten: "+noAsisten;
+
+});
+
+}
+function reiniciarConfirmaciones(){
+
+db.ref("confirmaciones").remove();
+
+alert("Asistencias reiniciadas");
+
+location.reload();
+
+}
+function cargarAsistentes(){
+
+let lista = document.getElementById("listaAsistentes");
+
+lista.innerHTML="";
+
+db.ref("confirmaciones").once("value",(snapshot)=>{
+
+snapshot.forEach((child)=>{
+
+let datos = child.val();
+
+if(datos.estado==="asisto"){
+
+let li = document.createElement("li");
+
+li.textContent = datos.nombre;
+
+li.className="servidor";
+
+li.draggable=true;
+
+li.id="srv_"+datos.nombre;
+
+li.ondragstart=arrastrar;
+
+lista.appendChild(li);
+
+}
+
+});
+
+});
+
+}
+function arrastrar(ev){
+
+ev.dataTransfer.setData("text", ev.target.id);
+
+}
+
+function permitirSoltar(ev){
+
+ev.preventDefault();
+
+}
+
+function soltar(ev){
+
+ev.preventDefault();
+
+let data = ev.dataTransfer.getData("text");
+
+let elemento = document.getElementById(data);
+
+ev.target.appendChild(elemento);
+
+let nombre = elemento.textContent;
+
+let rol = ev.target.dataset.rol;
+
+guardarRol(nombre,rol);
+
+}
+function arrastrar(ev){
+
+ev.dataTransfer.setData("text", ev.target.id);
+
+}
+
+function permitirSoltar(ev){
+
+ev.preventDefault();
+
+}
+
+function soltar(ev){
+
+ev.preventDefault();
+
+let data = ev.dataTransfer.getData("text");
+
+let elemento = document.getElementById(data);
+
+ev.target.appendChild(elemento);
+
+let nombre = elemento.textContent;
+
+let rol = ev.target.dataset.rol;
+
+guardarRol(nombre,rol);
+
+}
+function escucharRol(){
+
+let nombre = localStorage.getItem("nombreServidor");
+
+db.ref("roles/"+nombre).on("value",(snapshot)=>{
+
+let datos = snapshot.val();
+
+if(datos){
+
+alert("Hola "+datos.nombre+
+"\n\nTu líder te asignó el área de:\n\n"+datos.rol);
+
+}
+
+});
+
+}
+
+escucharRol();

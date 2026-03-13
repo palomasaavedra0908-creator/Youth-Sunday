@@ -86,6 +86,77 @@ APP CREADA POR PALOMA SAAVEDRA
 
 
 <script src="script.js"></script>
+<button id="botonLider" onclick="abrirPanelLider()">Panel líder</button>
+<div id="panelLider">
+<h3>Asignar roles</h3>
 
+<div class="tableroRoles">
+
+<div class="columnaRol" ondrop="soltar(event)" ondragover="permitirSoltar(event)" data-rol="Multimedia">
+<h4>Multimedia</h4>
+<p class="versiculo">Colosenses 3:23</p>
+</div>
+
+<div class="columnaRol" ondrop="soltar(event)" ondragover="permitirSoltar(event)" data-rol="Encargados de reunión">
+<h4>Encargados de reunión</h4>
+<p class="versiculo">1 Corintios 14:40</p>
+</div>
+
+<div class="columnaRol" ondrop="soltar(event)" ondragover="permitirSoltar(event)" data-rol="Bienvenida">
+<h4>Bienvenida</h4>
+<p class="versiculo">Romanos 15:7</p>
+</div>
+
+<div class="columnaRol" ondrop="soltar(event)" ondragover="permitirSoltar(event)" data-rol="Juegos">
+<h4>Juegos</h4>
+<p class="versiculo">Proverbios 15:13</p>
+</div>
+
+<div class="columnaRol" ondrop="soltar(event)" ondragover="permitirSoltar(event)" data-rol="Anuncios">
+<h4>Anuncios</h4>
+<p class="versiculo">Efesios 4:29</p>
+</div>
+
+<div class="columnaRol" ondrop="soltar(event)" ondragover="permitirSoltar(event)" data-rol="Acomodo sala">
+<h4>Acomodo sala</h4>
+<p class="versiculo">1 Corintios 14:33</p>
+</div>
+
+<div class="columnaRol" ondrop="soltar(event)" ondragover="permitirSoltar(event)" data-rol="Carteles sala principal">
+<h4>Carteles sala principal</h4>
+<p class="versiculo">Mateo 5:16</p>
+</div>
+
+<div class="columnaRol" ondrop="soltar(event)" ondragover="permitirSoltar(event)" data-rol="Nuevos">
+<h4>Nuevos</h4>
+<p class="versiculo">Hebreos 13:2</p>
+</div>
+
+<div class="columnaRol" ondrop="soltar(event)" ondragover="permitirSoltar(event)" data-rol="Prédica">
+<h4>Prédica</h4>
+<p class="versiculo">2 Timoteo 4:2</p>
+</div>
+
+</div>
+
+<h3>Servidores que asistirán</h3>
+<ul id="listaAsistentes"></ul>
+<h2>Panel del líder</h2>
+<div id="rolesPanel">
+
+<h3>Asignar roles</h3>
+
+<ul id="listaRoles"></ul>
+
+</div>
+<p id="totalAsisten"></p>
+<p id="totalNoAsisten"></p>
+
+<button onclick="reiniciarConfirmaciones()">Reiniciar asistencias</button>
+
+<div class="autor">
+APP CREADA POR PALOMA SAAVEDRA
+</div>
+</div>
 </body>
 </html>

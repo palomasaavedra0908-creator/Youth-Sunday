@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Youth Sunday</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="contenedor">
+
+<div class="card">
+
+<h1>YOUTH SUNDAY</h1>
+
+<p id="verse"></p>
+
+
+<div id="registroNuevo">
+
+<input id="nuevoNombre" placeholder="Escribe tu nombre">
+
+<button onclick="agregarNombre()">Agregar a la lista</button>
+
+</div>
+
+
+<div id="registro">
+
+<select id="name">
+
+<option value="">Selecciona tu nombre</option>
+
+</select>
+
+<button onclick="registrar()">Continuar</button>
+
+</div>
+
+
+<div id="confirmacion" style="display:none">
+
+<h2 id="saludo"></h2>
+
+<button class="asisto" onclick="confirmar('asisto')">ASISTO</button>
+
+<button class="noasisto" onclick="confirmar('no')">NO ASISTO</button>
+
+<br><br>
+
+<button onclick="cambiarNombre()">Cambiar nombre</button>
+
+</div>
+
+
+<div class="contador">
+
+<p id="asisten">Asisten: 0</p>
+
+<p id="noAsisten">No asisten: 0</p>
+
+<p id="pendientes">Pendientes: 0</p>
+
+</div>
+
+<ul id="lista"></ul>
+</div>
+
+</div>
+
+
+<footer>
+
+APP CREADA POR PALOMA SAAVEDRA
+
+</footer>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>

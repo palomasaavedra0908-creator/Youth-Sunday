@@ -1,6 +1,23 @@
-body{
 
+/* RESET */
+
+*{
 margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+
+/* FUENTE BASE ADAPTABLE */
+
+html{
+font-size:clamp(14px,2vw,18px);
+}
+
+
+/* FONDO */
+
+body{
 
 font-family:'Poppins',sans-serif;
 
@@ -9,59 +26,70 @@ background-image:url("https://i.pinimg.com/736x/05/22/96/052296fcd2f1137afad5822
 background-size:cover;
 background-position:center;
 
-height:100vh;
+min-height:100vh;
 
 display:flex;
 align-items:center;
 justify-content:center;
 
-flex-direction:column;
+padding:20px;
 
 }
 
-.contenedor-principal{
 
-display:flex;
-align-items:center;
-justify-content:center;
+/* CONTENEDOR */
 
-height:100%;
+.contenedor{
+
+width:100%;
+max-width:500px;
 
 }
+
+
+/* TARJETA */
 
 .card{
 
 background:rgba(255,255,255,0.92);
 
-padding:40px;
+backdrop-filter:blur(8px);
 
-border-radius:15px;
+padding:clamp(20px,4vw,35px);
 
-width:360px;
+border-radius:20px;
 
 text-align:center;
 
-box-shadow:0 10px 30px rgba(0,0,0,0.2);
+box-shadow:0 10px 30px rgba(0,0,0,0.15);
+
+width:100%;
 
 }
+
+
+/* TITULO */
 
 h1{
 
 font-family:'Playfair Display',serif;
 
-font-size:34px;
+font-size:clamp(28px,5vw,42px);
 
-color:#2d6a4f;
-
-letter-spacing:3px;
+color:#d4a017;
 
 margin-bottom:10px;
 
+letter-spacing:2px;
+
 }
+
+
+/* VERSICULO */
 
 #verse{
 
-font-style:italic;
+font-size:clamp(13px,2vw,16px);
 
 margin-bottom:20px;
 
@@ -69,81 +97,141 @@ color:#444;
 
 }
 
-input{
 
-padding:10px;
+/* INPUT Y SELECT */
 
-width:90%;
+input,select{
 
-border-radius:6px;
+width:100%;
 
-border:1px solid #ccc;
+padding:12px;
 
-margin-bottom:12px;
+border-radius:10px;
+
+border:1px solid #ddd;
+
+margin-bottom:10px;
+
+font-size:1rem;
 
 }
+
+
+/* BOTONES */
 
 button{
 
-padding:10px 18px;
+width:100%;
+
+padding:12px;
 
 border:none;
 
-border-radius:6px;
+border-radius:12px;
+
+font-size:1rem;
+
+margin-top:8px;
 
 cursor:pointer;
 
-font-weight:500;
+transition:0.3s;
 
 }
+
+
+/* BOTON ASISTO (PASTEL VERDE) */
 
 .asisto{
 
-background:#38b000;
+background:#b7e4c7;
 
-color:white;
-
-margin:5px;
+color:#1b4332;
 
 }
+
+.asisto:hover{
+
+background:#95d5b2;
+
+}
+
+
+/* BOTON NO ASISTO (PASTEL ROJO SUAVE) */
 
 .noasisto{
 
-background:#d00000;
+background:#ffd6d6;
 
-color:white;
-
-margin:5px;
+color:#7f1d1d;
 
 }
+
+.noasisto:hover{
+
+background:#ffb3b3;
+
+}
+
+
+/* BOTON CAMBIAR */
+
+.cambiar{
+
+background:#e9ecef;
+
+color:#444;
+
+}
+
+
+/* CONTADOR */
+
+.contador{
+
+margin-top:20px;
+
+font-weight:500;
+
+color:#333;
+
+font-size:clamp(14px,2vw,18px);
+
+}
+
+
+/* LISTA DE SERVIDORES */
 
 ul{
 
 list-style:none;
 
-padding:0;
+margin-top:15px;
 
 }
 
 li{
 
-background:#d8f3dc;
+background:#f8f9fa;
 
-padding:7px;
+padding:10px;
 
-margin:5px;
+border-radius:10px;
 
-border-radius:5px;
+margin-top:6px;
 
-animation:confirm 0.5s ease;
+font-size:clamp(13px,2vw,16px);
 
 }
 
+
+/* DERECHOS DE AUTOR */
+
 footer{
 
-position:absolute;
+position:fixed;
 
-bottom:8px;
+bottom:10px;
 
 width:100%;
 
@@ -151,29 +239,12 @@ text-align:center;
 
 font-family:'Playfair Display',serif;
 
-font-size:12px;
+font-size:clamp(10px,1.5vw,13px);
 
 color:white;
 
-opacity:0.7;
+letter-spacing:2px;
 
-letter-spacing:1px;
-
-}
-
-@keyframes confirm{
-
-0%{transform:scale(0.8);opacity:0;}
-
-100%{transform:scale(1);opacity:1;}
-
-}
-.cambiar{
-
-background:#888;
-
-color:white;
-
-margin-top:10px;
+opacity:0.8;
 
 }
